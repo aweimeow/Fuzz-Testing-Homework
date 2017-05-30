@@ -1,18 +1,16 @@
-#include <stdio.h>
-#include "klee/klee.h"
+#include <iostream>
 
+using namespace std;
 
 // Return the next date of input date
 int main(void) {
     int y, m, d, edgeday;
 
-    klee_make_symbolic(&y, sizeof(y), "y");
-    klee_make_symbolic(&m, sizeof(m), "m");
-    klee_make_symbolic(&d, sizeof(d), "d");
+    cin >> y >> m >> d;
 
     // Validate the input
     if (y < 1812 || y > 2013 || m < 1 || m > 12 || d < 1 || d > 31) {
-        printf("InvalidInput\n");
+        cout << "InvalidInput\n";
         return 0;
     }
 
@@ -28,7 +26,7 @@ int main(void) {
     
     // Validate the edge day
     if (d > edgeday) {
-        printf("InvalidInput\n");
+        cout << "InvalidInput\n";
         return 0;
     }
 
@@ -45,6 +43,7 @@ int main(void) {
         d++;
     }
 
-    printf("%d.%d.%d\n", y, m, d);
+    cout << y << m << d;
+
     return 0;
 }

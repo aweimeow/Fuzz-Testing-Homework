@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include "klee/klee.h"
+#include <iostream>
 
+using namespace std;
 
 // Return Equilateral or Isosceles or NotATriangle or Scalene
 const char* Triangle(int a, int b, int c) {
@@ -21,12 +21,10 @@ int main(void) {
     int a, b, c;
     const char* ans;
 
-    klee_make_symbolic(&a, sizeof(a), "a");
-    klee_make_symbolic(&b, sizeof(b), "b");
-    klee_make_symbolic(&c, sizeof(c), "c");
+    cin >> a >> b >> c;
 
     ans = Triangle(a, b, c);
-    printf("%s\n", ans);
+    cout << ans << endl;
 
     return 0;
 }
