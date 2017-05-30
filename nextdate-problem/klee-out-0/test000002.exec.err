@@ -1,0 +1,6 @@
+Error: external call with symbolic argument: printf
+File: /home/klee/Fuzz-Testing-Homework/nextdate-problem/nexdate.c
+Line: 48
+assembly.ll line: 180
+Stack: 
+	#000000180 in main () at /home/klee/Fuzz-Testing-Homework/nextdate-problem/nexdate.c:48
